@@ -814,11 +814,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!1 &1492987958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5974054187122442706, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-  m_PrefabInstance: {fileID: 6560491584012642063}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1919081517
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,10 +978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc959670c0bf3f45a1240ec6f3f9a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1492987958}
+  projectile: {fileID: 5974054187122442706, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
   damage: 10
   projSpeed: 15
-  dir: 1
 --- !u!1 &1945962735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,62 +1159,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6560491584012642063
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.0507
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947043107406471249, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974054187122442706, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
-      propertyPath: m_Name
-      value: Fireball
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}

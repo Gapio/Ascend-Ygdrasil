@@ -8,14 +8,20 @@ public class ShootFireball : MonoBehaviour
     public GameObject projectile;
     public int damage;
     public float projSpeed;
-    public float dir = 1f;
+    float dirX;
+    float dirY;
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.P))
         {
-            GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
-            spell.GetComponent<Rigidbody2D>().velocity = new Vector2(dir * projSpeed, 0);
+            dirX = Input.GetAxisRaw("Horizontal");
+            dirY = Input.GetAxisRaw("Vertical");
+            GameObject fball = Instantiate(projectile, transform.position, Quaternion.identity);
+            fball.GetComponent<Rigidbody2D>().velocity = new Vector2(dirX * projSpeed, dirY * projSpeed);
+            fball.GetComponent<FireballBehavior>().damage = damage;
         }  
     }
+
 }
