@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D col;
     private float dirX = 0f;
+    private bool canDoubleJump = false;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private LayerMask jumpGround;
@@ -33,7 +34,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
-            rb.velocity = new Vector2(dirX * moveSpeed, jumpPower);
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            canDoubleJump = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            canDoubleJump = false;
         }
 
 
