@@ -22,7 +22,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         dirX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (Input.GetKey(KeyCode.U) == false)
+        {
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
 
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
