@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -10,31 +11,84 @@ public class ShootFireball : MonoBehaviour
     public float projSpeed;
     float dirX;
     float dirY;
-    public float projTimer = 2f;
+    float dirXstored;
+    public float projTimer = 10f;
     [SerializeField] public float cooldown = 1f;
     public bool canFireball = false;
 
     void Update()
     {
-        if (canFireball) { 
+        
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             dirX = Input.GetAxisRaw("Horizontal");
+            dirXstored = dirX;
         }
-
+        if (canFireball) { 
         if (Input.GetKeyDown(KeyCode.I) && projTimer > cooldown)
         {
             GameObject fball = Instantiate(projectile, transform.position, Quaternion.identity);
+            Rigidbody2D rb = fball.GetComponent<Rigidbody2D>();
             if (!MovementLock())
             {
-                fball.GetComponent<Rigidbody2D>().velocity = new Vector2(dirX * projSpeed, 0);
+                rb.velocity = new Vector2(dirX * projSpeed, 0);
+                if(dirX < 0)
+                    {
+                        rb.rotation = 180f;
+                    }
                 fball.GetComponent<FireballBehavior>().damage = damage;
             }
             else
             {
                 dirX = Input.GetAxisRaw("Horizontal");
                 dirY = Input.GetAxisRaw("Vertical");
-                fball.GetComponent<Rigidbody2D>().velocity = new Vector2(dirX * projSpeed, dirY * projSpeed);
+                if (dirX == 0 && dirY == 0)
+                    {
+                        dirX = dirXstored;
+                    }
+                rb.velocity = new Vector2(dirX * projSpeed, dirY * projSpeed);
+
+                //nightmare hours
+                //typing this out hurt me physically and spiritually
+                if (dirX < 0)
+                    {
+                        if (dirY < 0)
+                        {
+                            rb.rotation = 225f;
+                        }
+                        else if (dirY > 0)
+                        {
+                            rb.rotation = 135f;
+                        }
+                        else
+                        {
+                            rb.rotation = 180f;
+                        }
+                    }
+                else if (dirX > 0)
+                    {
+                        if (dirY < 0)
+                        {
+                            rb.rotation = 315f;
+                        }
+                        else if (dirY > 0)
+                        {
+                            rb.rotation = 45f;
+                        }
+                    }
+                    else
+                    {
+                        if (dirY < 0)
+                        {
+                            rb.rotation = 270f;
+                        }
+                        else
+                        {
+                            rb.rotation = 90f;
+                        }
+
+                    }
+
                 fball.GetComponent<FireballBehavior>().damage = damage;
             }
             projTimer = 0;

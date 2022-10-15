@@ -12,5 +12,9 @@ public class PickupItems : MonoBehaviour
             shootFb.canFireball = true;
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Health Pack"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
