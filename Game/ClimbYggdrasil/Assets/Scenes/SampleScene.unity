@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5974054187122442706, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
   damage: 10
-  projSpeed: 15
+  projSpeed: 25
 --- !u!95 &1919081524
 Animator:
   serializedVersion: 4
