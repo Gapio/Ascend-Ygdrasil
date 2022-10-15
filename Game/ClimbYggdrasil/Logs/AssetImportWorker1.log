@@ -368,3 +368,7 @@ Received Import Request.
   path: Assets/Sprites/tilesskulls1_4.asset
   artifactKey: Guid(1e61075ad81365e48957f531bdaf4343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Sprites/tilesskulls1_4.asset using Guid(1e61075ad81365e48957f531bdaf4343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e1197846b05ff405385c0c80c340027') in 0.011845 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
