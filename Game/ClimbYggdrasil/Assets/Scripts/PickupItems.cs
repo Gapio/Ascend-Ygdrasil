@@ -10,6 +10,7 @@ public class PickupItems : MonoBehaviour
         {
             ShootFireball shootFb = GetComponent<ShootFireball>();
             shootFb.canFireball = true;
+            shootFb.projTimer = 100;
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Health Pack"))
