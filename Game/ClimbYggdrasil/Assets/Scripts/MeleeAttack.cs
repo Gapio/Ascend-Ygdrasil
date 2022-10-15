@@ -8,15 +8,25 @@ public class MeleeAttack : MonoBehaviour
 
     public Animator animator;
     public Transform attackPoint;
-    public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+
+    public float attackRange = 0.5f;
+    public int attackDamage = 31;
+
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if(Time.time >= nextAttackTime)
         {
-            Attack();
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
@@ -25,13 +35,21 @@ public class MeleeAttack : MonoBehaviour
         //Play animation
         animator.SetTrigger("Attack");
 
-        //Detect enemy in range
+        //Detect enemy in range 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         //Damage them
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We Hit" + enemy.name); 
+            enemy.GetComponent<EnemyTakeDamage>().TakeDamage(attackDamage);
         }
+    }
+
+    void OnDrawGizmoSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
