@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (dashTime > dashLength)
         {
-            rb.gravityScale = 4;
+            rb.gravityScale = 5;
             dashing = false;
             rb.velocity = new Vector2(0, 0);
             dashTime = 0;
@@ -88,6 +88,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool IsGrounded()
         {
-            return Physics2D.BoxCast(col.bounds.center, col.bounds.size, 0f, Vector2.down, .1f, jumpGround);
+            return Physics2D.BoxCast(col.bounds.center, col.bounds.size - new Vector3(0.3f, 0, 0), 0f, Vector2.down, .1f, jumpGround);
         }
 }

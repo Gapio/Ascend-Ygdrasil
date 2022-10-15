@@ -12,9 +12,11 @@ public class ShootFireball : MonoBehaviour
     float dirY;
     public float projTimer = 2f;
     [SerializeField] public float cooldown = 1f;
+    public bool canFireball = false;
 
     void Update()
     {
+        if (canFireball) { 
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             dirX = Input.GetAxisRaw("Horizontal");
@@ -38,6 +40,7 @@ public class ShootFireball : MonoBehaviour
             projTimer = 0;
         }
         projTimer += Time.deltaTime;
+        }
     }
     public bool MovementLock()
     {
