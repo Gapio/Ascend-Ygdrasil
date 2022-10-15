@@ -10,6 +10,8 @@ public class ShootFireball : MonoBehaviour
     public float projSpeed;
     float dirX;
     float dirY;
+    public float projTimer = 2f;
+    [SerializeField] public float cooldown = 1f;
 
     void Update()
     {
@@ -18,7 +20,7 @@ public class ShootFireball : MonoBehaviour
             dirX = Input.GetAxisRaw("Horizontal");
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && projTimer > cooldown)
         {
             GameObject fball = Instantiate(projectile, transform.position, Quaternion.identity);
             if (!MovementLock())
@@ -33,7 +35,9 @@ public class ShootFireball : MonoBehaviour
                 fball.GetComponent<Rigidbody2D>().velocity = new Vector2(dirX * projSpeed, dirY * projSpeed);
                 fball.GetComponent<FireballBehavior>().damage = damage;
             }
+            projTimer = 0;
         }
+        projTimer += Time.deltaTime;
     }
     public bool MovementLock()
     {

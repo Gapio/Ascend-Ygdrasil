@@ -1015,6 +1015,8 @@ MonoBehaviour:
   projectile: {fileID: 5974054187122442706, guid: 927b34523b4c3594ba253baf5cbbaf07, type: 3}
   damage: 10
   projSpeed: 25
+  projTimer: 0
+  cooldown: 0.75
 --- !u!95 &1919081524
 Animator:
   serializedVersion: 4
@@ -1054,6 +1056,7 @@ MonoBehaviour:
     m_Bits: 64
   attackRange: 0.53
   attackDamage: 31
+  attackRate: 2
 --- !u!1 &1945962735
 GameObject:
   m_ObjectHideFlags: 0
