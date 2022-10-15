@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D col;
     private float dirX = 0f;
     private float dirY = 0f;
-    private bool canDoubleJump = false;
-    private bool canDash = true;
+    public bool canDoubleJump = false;
+    public bool dashUnlocked = false;
+    private bool canDash = false;
     public bool dashing = false;
     private float dashTime = 0f;
     private float timeSinceDash = 0f;
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             canDoubleJump = false;
         }
-        if (Input.GetKeyDown(KeyCode.P) && canDash)
+        if (Input.GetKeyDown(KeyCode.P) && canDash && dashUnlocked)
         {
             Dash();
         }
@@ -74,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
         if (timeSinceDash > dashCooldown)
         {
             canDash = true;
+        }
+        if (!dashing && rb.velocity.y < -30)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -30);
         }
     }
 

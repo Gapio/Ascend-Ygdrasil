@@ -16,5 +16,11 @@ public class PickupItems : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Dash Powerup"))
+        {
+            PlayerMovement pMove = GetComponent<PlayerMovement>();
+            pMove.dashUnlocked = true;
+            Destroy(collision.gameObject);
+        }
     }
 }
