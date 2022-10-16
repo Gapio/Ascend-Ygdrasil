@@ -3,7 +3,14 @@ guid: 52dc112ef04e44a4ca6fe9478e485de6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Audio: {instanceID: 0}
+  - Dash: {fileID: 8300000, guid: f516b65450c7cb64882c5a6b7e351c6a, type: 3}
+  - Fire_Ball: {fileID: 8300000, guid: 11f3675ae62f1e4469dda52b3c7270e0, type: 3}
+  - Melee: {fileID: 8300000, guid: cc3c5864619df5b46a3f7cad3da9267e, type: 3}
+  - death_sound: {fileID: 8300000, guid: 8771d1f04fc437740aedb2335ac4ce38, type: 3}
+  - jump: {fileID: 8300000, guid: b9b41c649cf85c44c96f6ce2a9bc896d, type: 3}
+  - skeletor: {fileID: 8300000, guid: c96f3e6421ee5204f9fd33fc9ebe21ef, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

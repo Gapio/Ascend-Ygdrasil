@@ -24,6 +24,7 @@ public class MeleeAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.O))
             {
                 Attack();
+                SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.Melee);
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }

@@ -10,9 +10,15 @@ public class SfxManager : MonoBehaviour
     public AudioClip Dash;
     public AudioClip Fire_Ball;
     public AudioClip Melee;
-    public AudioClip Step;
+    public AudioClip death_sound;
+    public AudioClip jump;
+    public AudioClip skeletor;
+
+
 
     public static SfxManager sfxInstance;
+
+    //SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.YourSound);
 
     private void Awake()
     {
