@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator anim;
     private Rigidbody2D rb;
     private BoxCollider2D col;
     private SpriteRenderer sprite;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();    
         sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         djumpUnlocked = false;
     }
 
@@ -54,7 +56,16 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKey(KeyCode.U) == false || !IsGrounded()) && !dashing)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            if (IsGrounded() && dirX != 0)
+            {
+                anim.SetBool("Running", true);
+            }
+            else
+            {
+                anim.SetBool("Runnning", false);
+            }
         }
+        
         else if (Input.GetKey(KeyCode.U) == true && !dashing)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
@@ -104,6 +115,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -30);
         }
+        if (IsGrounded() && dirX == 0 && rb.velocity.y == 0f)
+        {
+            anim.SetTrigger("Idle");
+            anim.SetBool("Running", false);
+        }
+
     }
     
     private void OnTriggerStay2D(Collider2D collision)
@@ -116,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Dash()
     {
+        anim.SetTrigger("Dash");
         dashing = true;
         canDash = false;
         dashTime = 0;
