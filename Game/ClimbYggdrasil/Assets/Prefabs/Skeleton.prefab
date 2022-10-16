@@ -68,7 +68,7 @@ Transform:
   m_Children:
   - {fileID: 6967028483116343273}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6967028484319301801
 SpriteRenderer:
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6967028484319301806}
   currentHealth: 0
-  maxHealth: 75
+  maxHealth: 65
 --- !u!61 &6967028484319301802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   bodyCollider: {fileID: 6967028484319301807}
   rb: {fileID: 6967028484319301805}
   grounCheckPos: {fileID: 6967028483116343273}
-  skeleDamage: 4
+  skeleDamage: 3
 --- !u!50 &6967028484319301805
 Rigidbody2D:
   serializedVersion: 4

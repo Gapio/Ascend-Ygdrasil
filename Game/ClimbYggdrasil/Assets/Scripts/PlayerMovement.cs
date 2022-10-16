@@ -41,9 +41,9 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxis("Horizontal");
         dirY = Input.GetAxisRaw("Vertical");
-        if (dirX != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            dirXstored = dirX;
+            dirXstored = Input.GetAxisRaw("Horizontal");
         }
         if (dirXstored < 0)
         {
@@ -141,7 +141,16 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         dashTime = 0;
         rb.gravityScale = 0;
-        rb.velocity = new Vector2(dirX * dashVelocity, dirY * dashVelocity);
+        float dirXdash;
+        if(dirX == 0 && dirY != 0)
+        {
+            dirXdash = 0;
+        }
+        else
+        {
+            dirXdash = dirXstored;
+        }
+        rb.velocity = new Vector2(dirXdash * dashVelocity, dirY * dashVelocity);
         timeSinceDash = 0;
     }
     private bool IsGrounded()
