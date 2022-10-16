@@ -13,6 +13,10 @@ public class FireballBehavior : MonoBehaviour
             {
                 collision.GetComponent<EnemyTakeDamage>().TakeDamage(damage);
             }
+            else if (collision.GetComponent<SkeletorTakeDamage>() != null)
+            {
+                collision.GetComponent<SkeletorTakeDamage>().SkeleTakeDamage(damage);
+            }
             Destroy(gameObject);
         }
     }
