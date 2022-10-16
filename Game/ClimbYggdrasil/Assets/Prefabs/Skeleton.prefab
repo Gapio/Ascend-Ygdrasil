@@ -137,7 +137,6 @@ MonoBehaviour:
   animator: {fileID: 6967028484319301806}
   currentHealth: 0
   maxHealth: 75
-  SkeleDamage: 4
 --- !u!61 &6967028484319301802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b17fbc3ca43f5246a152aa315dc655e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeletor: {fileID: 0}
   walkSpeed: 200
   mustPatrol: 0
   groundLayer:
@@ -184,6 +184,7 @@ MonoBehaviour:
   bodyCollider: {fileID: 6967028484319301807}
   rb: {fileID: 6967028484319301805}
   grounCheckPos: {fileID: 6967028483116343273}
+  skeleDamage: 4
 --- !u!50 &6967028484319301805
 Rigidbody2D:
   serializedVersion: 4
@@ -215,7 +216,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.12, y: 0.13}
