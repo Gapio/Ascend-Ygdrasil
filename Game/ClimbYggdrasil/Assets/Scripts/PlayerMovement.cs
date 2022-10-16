@@ -103,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
         if (dashTime > dashLength)
         {
             rb.gravityScale = 5;
+            anim.SetBool("Dashing", false);
             dashing = false;
             PlayerHealth pHealth = GetComponent<PlayerHealth>();
             pHealth.canBeDamaged = true;
@@ -135,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Dash()
     {
-        anim.SetTrigger("Dash");
+        anim.SetBool("Dashing", true);
         dashing = true;
         canDash = false;
         dashTime = 0;
