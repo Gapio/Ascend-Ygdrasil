@@ -10,16 +10,24 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float iFrames = 1f;
     private float iTimer = 0f;
     private bool iState = false;
-
+    public GameObject ui;
     void Update()
     {
         if (iState)
         {
             iTimer += Time.deltaTime;
+            if(iTimer < 0.333 || iTimer > 0.666){
+                GetComponent<SpriteRenderer>().enabled = false;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().enabled = true;
+            }
             if (iTimer > iFrames)
             {
                 canBeDamaged = true;
                 iState = false;
+                GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
@@ -29,14 +37,18 @@ public class PlayerHealth : MonoBehaviour
         if (canBeDamaged)
         {
             playerHealth -= dmg;
-        }
-        if (!PlayerCheckDeath())
+            if (!PlayerCheckDeath())
         {
             iState = true;
             canBeDamaged = false;
             iTimer = 0f;
+            ui.GetComponent<HealthBar>().HealthBarUpdate(playerHealth);
         }
+        }
+
     }
+
+
 
     bool PlayerCheckDeath()
     {
