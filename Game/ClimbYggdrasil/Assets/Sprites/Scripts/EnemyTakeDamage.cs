@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour
 {
 
-    public Animator animator;
 
     public int currentHealth;
     [SerializeField]public int maxHealth;
@@ -17,20 +16,14 @@ public class EnemyTakeDamage : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //DeathCheck();
-        if (currentHealth <= 0) 
-        {
-            animator.SetBool("isDead", true);
-        }
-        animator.SetTrigger("Hurt");
+        DeathCheck();
+
     }
 
     private void DeathCheck()
     {
         if (currentHealth <= 0)
         {
-            animator.SetBool("isDead", true);
-            animator.SetTrigger("Hurt");
             Destroy(gameObject);
         }
     }

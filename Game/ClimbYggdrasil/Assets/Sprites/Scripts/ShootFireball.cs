@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ShootFireball : MonoBehaviour
 {
+    public Animator anim;
     public GameObject projectile;
     public int damage;
     public float projSpeed;
@@ -27,6 +28,7 @@ public class ShootFireball : MonoBehaviour
         if (canFireball) { 
         if (Input.GetKeyDown(KeyCode.I) && projTimer > cooldown)
         {
+            anim.SetTrigger("Fireball");
             GameObject fball = Instantiate(projectile, transform.position, Quaternion.identity);
             Rigidbody2D rb = fball.GetComponent<Rigidbody2D>();
             if (!MovementLock())
