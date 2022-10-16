@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();    
         sprite = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -75,6 +76,8 @@ public class PlayerMovement : MonoBehaviour
         if (dashing)
         { 
             dashTime += Time.deltaTime;
+            PlayerHealth pHealth = GetComponent<PlayerHealth>();
+            pHealth.canBeDamaged = false;
         }
         if (!canDash)
         {
@@ -84,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = 5;
             dashing = false;
+            PlayerHealth pHealth = GetComponent<PlayerHealth>();
+            pHealth.canBeDamaged = true;
             rb.velocity = new Vector2(0, 0);
             dashTime = 0;
         }
@@ -97,6 +102,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            PlayerHealth pHealth = GetComponent<PlayerHealth>();
+            pHealth.PlayerTakeDamage(1);
+        }
+    }
     private void Dash()
     {
         dashing = true;
