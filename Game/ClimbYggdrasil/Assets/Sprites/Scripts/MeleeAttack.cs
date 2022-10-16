@@ -43,6 +43,7 @@ public class MeleeAttack : MonoBehaviour
         {
             enemy.GetComponent<EnemyTakeDamage>().TakeDamage(attackDamage);
         }
+        animator.SetTrigger("Idle");
     }
 
     void OnDrawGizmoSelected()
