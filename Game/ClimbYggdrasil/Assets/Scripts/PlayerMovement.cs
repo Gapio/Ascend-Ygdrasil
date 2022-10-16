@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D col;
+    private SpriteRenderer sprite;
     private float dirX = 0f;
     private float dirY = 0f;
+    private float dirXstored = 1f;
     public bool canDoubleJump = false;
     public bool dashUnlocked = false;
     private bool canDash = false;
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();    
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,18 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxis("Horizontal");
         dirY = Input.GetAxisRaw("Vertical");
+        if (dirX != 0)
+        {
+            dirXstored = dirX;
+        }
+        if (dirXstored < 0)
+        {
+            rb.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            rb.transform.localScale = Vector3.one;
+        }
         if ((Input.GetKey(KeyCode.U) == false || !IsGrounded()) && !dashing)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);

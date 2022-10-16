@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac5df12a06fd34d43818edf38e6f9ebb
+guid: 27e4e8d90215c5749a6c2d429aa21b7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Surtr-Sprite 1_0
+      name: Surtr-Sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f52c8f1d95b0d141a329df22e626dee
-      internalID: 2011487431
+      spriteID: 8e10c2b22f418cc4da8f9963f324a01e
+      internalID: 1605313132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_1
+      name: Surtr-Sprite_1
       rect:
         serializedVersion: 2
         x: 32
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86ca3c32b1c5cee4599ce800ea6a4600
-      internalID: -1181053420
+      spriteID: 6d285dda039378047b763bbb42d98f72
+      internalID: 884553353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_2
+      name: Surtr-Sprite_2
       rect:
         serializedVersion: 2
         x: 65
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 212e32fdbb393a546a25d8c74f37a6f7
-      internalID: -40512629
+      spriteID: 98c728d190f5cdf489e9c668ee7d72e3
+      internalID: -2147170774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_3
+      name: Surtr-Sprite_3
       rect:
         serializedVersion: 2
         x: 96
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06654a03e8771684e99bd336e28dba15
-      internalID: 485879366
+      spriteID: f6a8df8075b27b5418e8207fe8c423ef
+      internalID: -163347921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_4
+      name: Surtr-Sprite_4
       rect:
         serializedVersion: 2
         x: 2
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79e9e1b71fc9d2f46802772ba6b66a5e
-      internalID: 1476956398
+      spriteID: d8766ce7e55b18b44a5dc964a383a224
+      internalID: -904500903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_5
+      name: Surtr-Sprite_5
       rect:
         serializedVersion: 2
         x: 33
@@ -226,19 +226,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5e839313159fc046965df52dae4cce1
-      internalID: 423868492
+      spriteID: 997be25b164988e48ad09b422de4aee6
+      internalID: -1280481122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_6
+      name: Surtr-Sprite_6
       rect:
         serializedVersion: 2
         x: 67
         y: 42
-        width: 30
+        width: 29
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -247,35 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a91c3f78fcca424ea50b6200528e102
-      internalID: 1844754111
+      spriteID: 71ef6fc4edb45214294bdae5323da7a1
+      internalID: 417762340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Surtr-Sprite 1_7
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 42
-        width: 37
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dff0f7c1159da2f4ab00a452531a7723
-      internalID: -1561369953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Surtr-Sprite 1_8
+      name: Surtr-Sprite_7
       rect:
         serializedVersion: 2
         x: 2
@@ -289,8 +268,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d89d19a1bea31a94c9eb01f2910a968d
-      internalID: -1095124969
+      spriteID: 78deb88b738f0a642bcc52683a51188c
+      internalID: 1656167893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Surtr-Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 10
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffd2c1b9f0d22540a48ba6cf4d3c34f
+      internalID: -511205991
       vertices: []
       indices: 
       edges: []
@@ -306,15 +306,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Surtr-Sprite 1_1: -1181053420
-      Surtr-Sprite 1_7: -1561369953
-      Surtr-Sprite 1_3: 485879366
-      Surtr-Sprite 1_0: 2011487431
-      Surtr-Sprite 1_6: 1844754111
-      Surtr-Sprite 1_4: 1476956398
-      Surtr-Sprite 1_8: -1095124969
-      Surtr-Sprite 1_5: 423868492
-      Surtr-Sprite 1_2: -40512629
+      Surtr-Sprite_2: -2147170774
+      Surtr-Sprite_5: -1280481122
+      Surtr-Sprite_1: 884553353
+      Surtr-Sprite_4: -904500903
+      Surtr-Sprite_8: -511205991
+      Surtr-Sprite_3: -163347921
+      Surtr-Sprite_6: 417762340
+      Surtr-Sprite_7: 1656167893
+      Surtr-Sprite_0: 1605313132
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83565c2651c9c7544a6a6fec9d64f7e4
+guid: 04868c6ce44a30248a38bd0a314e148d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +105,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: door_and_trunk_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 133
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2754a1bafccbddc479ae4db97f7ca410
+      internalID: -71806807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_and_trunk_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 133
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d398f453d3222488b05f55b34f276a
+      internalID: -1125207359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_and_trunk_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 84
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d6862b1b2a5c34f8e41c25c385178a
+      internalID: 591082025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_and_trunk_3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 76
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bff132a24220b4494ee426c3b70edb
+      internalID: -1023669409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_and_trunk_4
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 76
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dda6cbc406767540a573451b6c780c9
+      internalID: -1645200747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +221,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      door_and_trunk_1: -1125207359
+      door_and_trunk_0: -71806807
+      door_and_trunk_2: 591082025
+      door_and_trunk_3: -1023669409
+      door_and_trunk_4: -1645200747
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
