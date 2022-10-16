@@ -5,6 +5,8 @@ using UnityEngine;
 public class AIPatrol : MonoBehaviour
 {
 
+    public SkeletorTakeDamage skeletor;
+
     public float walkSpeed;
 
     [HideInInspector]
@@ -55,5 +57,17 @@ public class AIPatrol : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
         mustPatrol = true;
+    }
+
+    [SerializeField] public int skeleDamage = 4;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemies") == false)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.GetComponent<PlayerHealth>().PlayerTakeDamage(skeleDamage);
+            }
+        }
     }
 }

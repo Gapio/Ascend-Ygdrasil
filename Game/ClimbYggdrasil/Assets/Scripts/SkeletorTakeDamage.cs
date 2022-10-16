@@ -9,6 +9,7 @@ public class SkeletorTakeDamage : MonoBehaviour
 
     public int currentHealth;
     [SerializeField] public int maxHealth;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -33,6 +34,4 @@ public class SkeletorTakeDamage : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
