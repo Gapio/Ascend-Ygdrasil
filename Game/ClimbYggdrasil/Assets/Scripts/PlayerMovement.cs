@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                anim.SetBool("Runnning", false);
+                anim.SetBool("Running", false);
             }
         }
         
@@ -78,11 +78,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 canDoubleJump = true;
             }
+            anim.SetTrigger("Jump");
         }
         if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump && !IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             canDoubleJump = false;
+            anim.SetTrigger("Jump");
         }
         if (Input.GetKeyDown(KeyCode.P) && canDash && dashUnlocked)
         {
@@ -115,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -30);
         }
-        if (IsGrounded() && dirX == 0 && rb.velocity.y == 0f)
+        if (IsGrounded() && rb.velocity.x == 0 && rb.velocity.y == 0f)
         {
             anim.SetTrigger("Idle");
             anim.SetBool("Running", false);
