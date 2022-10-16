@@ -101,8 +101,8 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, -30);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Hazard"))
         {
