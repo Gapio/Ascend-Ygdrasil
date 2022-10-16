@@ -30,5 +30,11 @@ public class PickupItems : MonoBehaviour
             pMove.dashUnlocked = true;
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Jump Powerup"))
+        {
+            PlayerMovement pMove = GetComponent<PlayerMovement>();
+            pMove.djumpUnlocked = true;
+            Destroy(collision.gameObject);
+        }
     }
 }

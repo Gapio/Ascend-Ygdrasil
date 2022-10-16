@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirXstored = 1f;
     public bool canDoubleJump = false;
     public bool dashUnlocked = false;
+    public bool djumpUnlocked;
     private bool canDash = false;
     public bool dashing = false;
     private float dashTime = 0f;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();    
         sprite = GetComponent<SpriteRenderer>();
-
+        djumpUnlocked = false;
     }
 
     // Update is called once per frame
@@ -59,12 +60,15 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            canDoubleJump = true;
+            if (djumpUnlocked == true)
+            {
+                canDoubleJump = true;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump)
+        if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump && !IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             canDoubleJump = false;
@@ -121,6 +125,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool IsGrounded()
         {
-            return Physics2D.BoxCast(col.bounds.center, col.bounds.size - new Vector3(0.3f, 0, 0), 0f, Vector2.down, .1f, jumpGround);
+            return Physics2D.BoxCast(col.bounds.center, col.bounds.size - new Vector3(0.1f, 0, 0), 0f, Vector2.down, .1f, jumpGround);
         }
 }

@@ -41,9 +41,17 @@ public class TurretBehavior : MonoBehaviour
         {
             rb.velocity = new Vector2 (30, rb.velocity.y);
         }
+        else if(rb.velocity.x < -30)
+        {
+            rb.velocity = new Vector2(-30, rb.velocity.y);
+        }
         if (rb.velocity.y > 30)
         {
             rb.velocity = new Vector2(rb.velocity.x, 30);
+        }
+        else if (rb.velocity.y < -30)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -30);
         }
 
     }
