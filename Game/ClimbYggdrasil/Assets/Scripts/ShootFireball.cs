@@ -28,6 +28,7 @@ public class ShootFireball : MonoBehaviour
         if (canFireball) { 
         if (Input.GetKeyDown(KeyCode.I) && projTimer > cooldown)
         {
+            SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.Fire_Ball);
             anim.SetTrigger("Fireball");
             GameObject fball = Instantiate(projectile, transform.position, Quaternion.identity);
             Rigidbody2D rb = fball.GetComponent<Rigidbody2D>();

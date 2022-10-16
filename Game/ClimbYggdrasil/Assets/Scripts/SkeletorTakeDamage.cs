@@ -35,6 +35,7 @@ public class SkeletorTakeDamage : MonoBehaviour
     public void SkeleTakeDamage(int damage)
     {
         currentHealth -= damage;
+        SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.skeletor);
         if (currentHealth <= 0)
         {
             animator.SetBool("isDead", true);

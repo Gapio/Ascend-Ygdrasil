@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.jump);
             if (djumpUnlocked == true)
             {
                 canDoubleJump = true;
@@ -83,12 +84,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump && !IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.jump);
             canDoubleJump = false;
             anim.SetTrigger("Jump");
         }
         if (Input.GetKeyDown(KeyCode.P) && canDash && dashUnlocked)
         {
             Dash();
+            SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.Dash);
         }
         if (dashing)
         { 
