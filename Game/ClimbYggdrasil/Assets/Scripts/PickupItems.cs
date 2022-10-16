@@ -5,6 +5,8 @@ using UnityEngine;
 public class PickupItems : MonoBehaviour
 {
     [SerializeField] private int heal = 3;
+    public GameObject ui;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Fire Powerup"))
@@ -22,6 +24,7 @@ public class PickupItems : MonoBehaviour
             {
                 pHealth.playerHealth = 8;
             }
+            ui.GetComponent<HealthBar>().HealthBarUpdate(pHealth.playerHealth);
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Dash Powerup"))
