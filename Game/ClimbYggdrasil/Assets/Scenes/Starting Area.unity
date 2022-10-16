@@ -40475,6 +40475,7 @@ GameObject:
   - component: {fileID: 563894226}
   - component: {fileID: 563894225}
   - component: {fileID: 563894224}
+  - component: {fileID: 563894227}
   m_Layer: 0
   m_Name: End Game Door
   m_TagString: Untagged
@@ -40575,6 +40576,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563894227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563894223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b4c64c6846e0b4195f2d2bfcebbbda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &644909069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6860215948050653774, guid: b8d4185009c2aee4c98c4792b3d3224b, type: 3}
@@ -42711,7 +42724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6860215948050653774, guid: b8d4185009c2aee4c98c4792b3d3224b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: 83.5
       objectReference: {fileID: 0}
     - target: {fileID: 6860215948050653774, guid: b8d4185009c2aee4c98c4792b3d3224b, type: 3}
       propertyPath: m_LocalPosition.z
