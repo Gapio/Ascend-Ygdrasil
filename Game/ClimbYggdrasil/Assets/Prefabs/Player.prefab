@@ -184,10 +184,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canDoubleJump: 0
   dashUnlocked: 0
+  djumpUnlocked: 0
   dashing: 0
   dashCooldown: 1
-  dashLength: 0.08
-  dashVelocity: 50
+  dashLength: 0.12
+  dashVelocity: 40
   moveSpeed: 13
   jumpPower: 22
   jumpGround:
@@ -264,3 +265,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 8
+  canBeDamaged: 1
+  iFrames: 0.5
