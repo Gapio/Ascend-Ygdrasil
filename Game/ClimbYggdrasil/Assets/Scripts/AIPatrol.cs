@@ -11,6 +11,7 @@ public class AIPatrol : MonoBehaviour
     public bool mustPatrol;
     private bool mustTurn;
     public LayerMask groundLayer;
+    public Collider2D bodyCollider;
 
 
     public Rigidbody2D rb;
@@ -41,7 +42,7 @@ public class AIPatrol : MonoBehaviour
 
     void Patrol()
     {
-        if (mustTurn)
+        if (mustTurn || bodyCollider.IsTouchingLayers(groundLayer))
         {
             Flip();
         }
